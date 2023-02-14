@@ -1,0 +1,180 @@
+/* Animation 1: Falling
+   Bolden falder konstant fra oven. */
+.falling {
+  animation-name: falling;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate(0, -300%);
+  }
+
+  100% {
+    transform: translate(0, 300%);
+  }
+}
+
+.bouncing {
+  animation-name: bouncing;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translate(0, -150%);
+  }
+
+  50% {
+    transform: translate(0, 150%);
+  }
+
+  100% {
+    transform: translate(0, -150%);
+  }
+}
+
+.drop {
+  animation-name: drop;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: translate(0, -300%);
+  }
+
+  100% {
+    transform: translate(0, 140%);
+  }
+}
+
+.pattern {
+  animation: south_east 2s linear infinite;
+}
+
+@keyframes south_east {
+  0% {
+    transform: translate(0%, -150%);
+  }
+  25% {
+    transform: translate(150%, 0%);
+  }
+  50% {
+    transform: translate(0%, 150%);
+  }
+  75% {
+    transform: translate(-150%, 0%);
+  }
+  100% {
+    transform: translate(0%, -150%);
+  }
+}
+
+.zoom_out {
+  animation: zoom_out 5s 1 forwards;
+}
+
+@keyframes zoom_out {
+  0% {
+    transform: scale(10);
+  }
+
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+.zoom_in {
+  animation: zoom_in 5s 1 forwards;
+}
+
+@keyframes zoom_in {
+  0% {
+    transform: scale(0.1);
+  }
+
+  100% {
+    transform: scale(10);
+  }
+}
+
+.fade_out {
+  animation: fade_out 3s 1 forwards;
+}
+
+@keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade_in {
+  animation: fade_in 3s 1 forwards;
+}
+
+@keyframes fade_in {
+  0% {
+    /* hvorfor ikke transform:opacity? */
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.rotation {
+  /* svært med notation */
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotation2 {
+  animation: rotation2 3s linear infinite;
+}
+
+@keyframes rotation2 {
+  0% {
+    transform: rotate(0deg) translate(40px);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(40px);
+  }
+}
+
+.glow {
+  animation: glow 3s infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: brightness(50%);
+    filter: contrast(50%);
+  }
+
+  100% {
+    filter: brightness(150%);
+    filter: contrast(150%);
+    /* in order: x offset, y offset, blur size, spread size, color */
+    box-shadow: 0px 0px 3px 1px #ffd700;
+    border-radius: 100%;
+  }
+}
