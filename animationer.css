@@ -272,3 +272,64 @@ animation: bounce 3s linear infinite ;
     transform: translate(9vw,8vw) rotate(340deg);
   }
 }
+
+.squash{
+animation: squash 3s linear infinite;
+}
+
+@keyframes squash
+ {
+  
+
+  0% {
+    transform: translate(0%, -150%) scaleX(1);
+  }
+  25% {
+    /* ball hits wall first time*/
+    transform: translate(180%, 0%) ;
+  }
+  26%{
+    /* ball deforms on horisontally */
+    transform:translate(180%, 0%) scaleX(0.5);
+  }
+  27%{
+    /* ball returns to original size */
+    transform:translate(180%, 0%) scaleX(1);
+  }
+
+/* same logic for the rest */
+
+/* second wall hit */
+  50% {
+    transform: translate(0%, 150%);
+  }
+  51%{
+    transform:translate(0%, 150%) scaleY(0.5);
+  }
+  52%{
+    transform:translate(0%, 150%) scaleY(1);
+  }
+
+/* third wall hit */
+  75% {
+    transform: translate(-160%, 0%) ;
+  }
+   76% {
+    transform: translate(-160%, 0%) scaleX(0.5);
+  }
+   77% {
+    transform: translate(-160%, 0%) scaleX(1);
+  }
+
+
+/* fourth wall hit */
+  98% {
+    transform: translate(0%, -150%) ;
+  }99% {
+    transform: translate(0%, -150%) scaleY(0.5) ;
+  }
+  100% {
+    transform: translate(0%, -150%) scaleY(1);
+  }
+}
+
